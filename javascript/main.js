@@ -1,21 +1,4 @@
-/*
-// ARRAY + PUSH (opcion 1)
-
-let carrito = []
-
-let producto = prompt ("Ingrese productos a su carrito. Para finalizar escriba listo")
-
-while (producto != "listo")
-{
-    carrito.push (producto);
-    alert (carrito)
-    producto = prompt ("Ingrese otro producto. Para finalizar escriba listo")
-}
-alert ("Este es su carrito de compras: ")
-alert (carrito)
-*/
-
-// ARRAY  (opcion 2)
+// ARRAY
 
 let productos = [
     {id:1, nombre: 'Televisor', precio: 2000 },
@@ -41,7 +24,6 @@ const nproductos = [];
 
 for (i in productos)
 nproductos.push (productos[i])
-console.log (nproductos)
 
 //DOM + EVENTOS
 //OBTIENE LA TABLA
@@ -53,8 +35,10 @@ let boton2 = document.getElementById("boton2");
 let boton3 = document.getElementById("boton3");
 
 //OBTIENE LOS PRODUCTOS Y VALORES
-let televisor = productos[0].nombre;
-let precioTelevisor = productos[0].precio;
+//mostrar datos del storage
+
+let televisor = nproductos[0].nombre;
+let precioTelevisor = nproductos[0].precio;
 
 let celular = productos[1].nombre;
 let precioCelular = productos[1].precio;
@@ -77,21 +61,55 @@ boton1.addEventListener("click", function(e)
 {
     e.preventDefault();
     agregar(televisor, precioTelevisor);
-})
+
+    Toastify({
+        text: "Agregaste televisor a tu carrito.",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+
+        style: {
+            background: "black",
+          }
+    }).showToast();
+}
+)
 
 boton2.addEventListener("click", function(e)
 {
     e.preventDefault();
     agregar(celular, precioCelular);
+
+    Toastify({
+        text: "Agregaste celular a tu carrito.",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+
+        style: {
+            background: "black",
+          }
+    }).showToast();
+
 })
 
 boton3.addEventListener("click", function(e)
 {
     e.preventDefault();
     agregar(laptop, precioLaptop);
+
+    Toastify({
+        text: "Agregaste laptop a tu carrito.",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+
+        style: {
+            background: "black",
+          }
+    }).showToast();
+
 })
-
-
 
 /*
 
